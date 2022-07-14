@@ -1,4 +1,4 @@
-package com.greemoid.giphy.presentation
+package com.greemoid.giphy.presentation.fragments
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,9 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.greemoid.giphy.domain.models.Giphy
 import com.greemoid.giphy.domain.usecases.GetTrendingGifsUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 class GifsViewModel(val useCase: GetTrendingGifsUseCase): ViewModel() {
 

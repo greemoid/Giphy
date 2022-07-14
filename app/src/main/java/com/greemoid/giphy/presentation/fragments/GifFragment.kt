@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import com.greemoid.giphy.R
-import com.greemoid.giphy.presentation.GifsViewModel
 
 
 class GifFragment : Fragment() {

@@ -1,11 +1,9 @@
-package com.greemoid.giphy.presentation
+package com.greemoid.giphy.presentation.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.greemoid.giphy.data.models.DownsizedLarge
 import com.greemoid.giphy.databinding.GifItemLayoutBinding
 import com.greemoid.giphy.domain.models.Giphy
 

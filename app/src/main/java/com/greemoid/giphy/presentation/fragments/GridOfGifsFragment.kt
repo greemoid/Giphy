@@ -5,13 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.greemoid.giphy.databinding.FragmentGridOfGifsBinding
-import com.greemoid.giphy.presentation.GifsAdapter
-import com.greemoid.giphy.presentation.GifsViewModel
+import com.greemoid.giphy.presentation.adapters.GifsAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
