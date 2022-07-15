@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.greemoid.giphy.R
 import com.greemoid.giphy.databinding.FragmentGridOfGifsBinding
 import com.greemoid.giphy.presentation.adapters.GifsAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -30,9 +32,16 @@ class GridOfGifsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+
+        adapter.setOnItemClickListener {
+            val bundle = Bundle()
+            bundle.putSerializable("giphy", it)
+            findNavController().navigate(R.id.action_gridOfGifsFragment_to_gifFragment, bundle)
+        }
+
         viewModel.getTrendingGifs()
         viewModel.trendingGifs.observe(viewLifecycleOwner, {list ->
-            adapter.setList(list)
+            adapter.differ.submitList(list)
         })
     }
 

@@ -12,7 +12,14 @@
         tools:layout="@layout/fragment_gif" >
         <action
             android:id="@+id/action_gifFragment_to_gridOfGifsFragment"
-            app:destination="@id/gridOfGifsFragment" />
+            app:destination="@id/gridOfGifsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="giphy"
+            app:argType="com.greemoid.giphy.domain.models.Giphy" />
     </fragment>
     <fragment
         android:id="@+id/gridOfGifsFragment"
@@ -20,6 +27,10 @@
         android:label="GridOfGifsFragment" >
         <action
             android:id="@+id/action_gridOfGifsFragment_to_gifFragment"
-            app:destination="@id/gifFragment" />
+            app:destination="@id/gifFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 </navigation>
