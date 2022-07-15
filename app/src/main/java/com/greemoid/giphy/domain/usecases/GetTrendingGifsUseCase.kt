@@ -7,5 +7,5 @@ class GetTrendingGifsUseCase(private val repository: GifsRepository) {
 
 
     suspend fun fetchTrendingGifs(limit: Int = 25): List<Giphy> =
-        repository.fetchTrendingGifs()
+        repository.fetchTrendingGifs(limit)
 }

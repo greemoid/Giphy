@@ -3,6 +3,7 @@ package com.greemoid.giphy.presentation.fragments
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -31,5 +32,9 @@ class GifFragment : Fragment() {
             .asGif()
             .load(gif.url)
             .into(binding.imageViewGif)
+
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.action_gifFragment_to_gridOfGifsFragment)
+        }
     }
 }

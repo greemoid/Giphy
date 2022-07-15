@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.greemoid.giphy.data.models.GifModel
+import com.greemoid.giphy.data.repository.GifsMapper
 import com.greemoid.giphy.domain.models.Giphy
 import com.greemoid.giphy.domain.usecases.GetSearchGifsUseCase
 import com.greemoid.giphy.domain.usecases.GetTrendingGifsUseCase
@@ -30,4 +32,5 @@ class GifsViewModel(
     fun getSearchGifs(searchQuery: String) = viewModelScope.launch {
         _searchGifs.postValue(searchGifsUseCase.fetchSearchGifs(searchQuery = searchQuery))
     }
+
 }

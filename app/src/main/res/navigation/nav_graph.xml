@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_gifFragment_to_gridOfGifsFragment"
             app:destination="@id/gridOfGifsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
