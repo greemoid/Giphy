@@ -4,12 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.greemoid.giphy.R
 import com.greemoid.giphy.databinding.FragmentGridOfGifsBinding
 import com.greemoid.giphy.presentation.adapters.GifsAdapter
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
@@ -32,6 +37,24 @@ class GridOfGifsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+
+        var job: Job? = null
+        binding.etSearch.addTextChangedListener { editable ->
+            job?.cancel()
+            job = MainScope().launch {
+                delay(500L)
+                editable?.let {
+                    if (editable.toString().isNotEmpty()) {
+                        viewModel.getSearchGifs(editable.toString())
+                    }
+                }
+            }
+        }
+
+        viewModel.searchGifs.observe(viewLifecycleOwner, { list ->
+            adapter.differ.submitList(list)
+        })
+
 
         adapter.setOnItemClickListener {
             val bundle = Bundle()

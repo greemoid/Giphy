@@ -10,11 +10,16 @@ class TrendingGifsSource(
     private val gifsApi: GifsApi,
     private val mapper: GifsMapper
 ): GifsRepository {
-    override suspend fun fetchGifs(): List<Giphy> =
+
+    override suspend fun fetchTrendingGifs(limit: Int): List<Giphy> =
         withContext(Dispatchers.IO) {
             val trendingGifs = gifsApi.fetchTrendingGifs()
             mapper.invoke(trendingGifs)
         }
 
-
-}
+    override suspend fun fetchSearchGifs(limit: Int, searchQuery: String): List<Giphy> =
+        withContext(Dispatchers.IO) {
+            val searchGifs = gifsApi.fetchSearchGifs(searchQuery = searchQuery)
+            mapper.invoke(searchGifs)
+        }
+    }

@@ -13,4 +13,13 @@ interface GifsApi {
         @Query("limit") limit: Int = 25,
         @Query("rating") rating: String = "g",
     ): GifModel
+
+    @GET("search?")
+    suspend fun fetchSearchGifs(
+        @Query("api_key") apiKey: String = "yNrwmnFgUTwrgBnlOSCD8nU4c30RQGUn",
+        @Query("q") searchQuery: String,
+        @Query("limit") limit: Int = 25,
+        @Query("rating") rating: String = "g",
+        @Query("lang") lang: String = "en",
+    ) : GifModel
 }

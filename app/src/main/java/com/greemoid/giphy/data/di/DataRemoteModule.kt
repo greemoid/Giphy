@@ -18,15 +18,13 @@ val dataRemoteModule = module {
 
     single { GifsMapper() }
 
-    single<GifsRepository> { TrendingGifsSource(
-        gifsApi = get(),
-        mapper = get()
-    ) }
-
-
+    single<GifsRepository> {
+        TrendingGifsSource(
+            gifsApi = get(),
+            mapper = get()
+        )
+    }
 }
-
-
 
 fun createRetrofit(): Retrofit {
     return Retrofit.Builder()
