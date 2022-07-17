@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.greemoid.giphy.R
 import com.greemoid.giphy.databinding.ActivityMainBinding
+import com.greemoid.giphy.presentation.fragments.GifsViewModel
 
 
 class MainActivity : AppCompatActivity() {
