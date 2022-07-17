@@ -6,6 +6,6 @@ import com.greemoid.giphy.domain.repository.GifsRepository
 class GetTrendingGifsUseCase(private val repository: GifsRepository) {
 
 
-    suspend fun fetchTrendingGifs(limit: Int = 25): List<Giphy> =
+    suspend fun fetchTrendingGifs(limit: Int = 200): List<Giphy> =
         repository.fetchTrendingGifs(limit)
 }

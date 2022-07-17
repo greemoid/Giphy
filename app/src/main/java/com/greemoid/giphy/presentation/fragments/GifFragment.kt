@@ -30,7 +30,8 @@ class GifFragment : Fragment() {
         val gif = args.giphy
         Glide.with(this)
             .asGif()
-            .load(gif.url)
+            .load(gif.url_large)
+            .placeholder(R.drawable.img)
             .into(binding.imageViewGif)
 
         binding.btnBack.setOnClickListener {

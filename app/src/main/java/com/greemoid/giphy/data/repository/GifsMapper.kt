@@ -12,7 +12,8 @@ class GifsMapper : Mapper<GifModel, List<Giphy>> {
             giphyList.add(Giphy(
                 height = it.images.downsized_large.height,
                 size = it.images.downsized_large.size,
-                url = it.images.downsized_large.url,
+                url_medium = it.images.downsized_medium.url,
+                url_large = it.images.downsized_large.url,
                 width = it.images.downsized_large.width))
         }
         return giphyList

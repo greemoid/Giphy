@@ -10,7 +10,7 @@ interface GifsApi {
     @GET("trending?")
     suspend fun fetchTrendingGifs(
         @Query("api_key") apiKey: String = "yNrwmnFgUTwrgBnlOSCD8nU4c30RQGUn", //todo remove api from this query
-        @Query("limit") limit: Int = 250,
+        @Query("limit") limit: Int = 200,
         @Query("rating") rating: String = "g",
     ): GifModel
 
@@ -18,7 +18,7 @@ interface GifsApi {
     suspend fun fetchSearchGifs(
         @Query("api_key") apiKey: String = "yNrwmnFgUTwrgBnlOSCD8nU4c30RQGUn",
         @Query("q") searchQuery: String,
-        @Query("limit") limit: Int = 250,
+        @Query("limit") limit: Int = 200,
         @Query("rating") rating: String = "g",
         @Query("lang") lang: String = "en",
     ) : GifModel

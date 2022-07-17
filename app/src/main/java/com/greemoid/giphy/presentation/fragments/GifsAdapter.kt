@@ -1,4 +1,4 @@
-package com.greemoid.giphy.presentation.adapters
+package com.greemoid.giphy.presentation.fragments
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,7 +20,6 @@ class GifsAdapter : RecyclerView.Adapter<GifsAdapter.GifsViewHolder>() {
         fun displayGif(item: Giphy) {
             Glide.with(itemView.context)
                 .asGif()
-                .placeholder(R.drawable.img)
                 .load(item.url_medium)
                 .into(binding.imageViewGif)
         }
@@ -28,11 +27,11 @@ class GifsAdapter : RecyclerView.Adapter<GifsAdapter.GifsViewHolder>() {
 
     private val differCallback = object : DiffUtil.ItemCallback<Giphy>() {
         override fun areItemsTheSame(oldItem: Giphy, newItem: Giphy): Boolean {
-            return oldItem == newItem
+            return oldItem.url_medium == newItem.url_medium
         }
 
         override fun areContentsTheSame(oldItem: Giphy, newItem: Giphy): Boolean {
-            return oldItem.url_medium == newItem.url_medium
+            return oldItem == newItem
         }
     }
 
