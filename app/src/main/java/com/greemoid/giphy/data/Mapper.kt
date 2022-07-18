@@ -1,4 +1,4 @@
-package com.greemoid.giphy.data.models
+package com.greemoid.giphy.data
 
 interface Mapper<in I, out O> {
 

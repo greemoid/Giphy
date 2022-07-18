@@ -1,10 +1,9 @@
-package com.greemoid.giphy.data.di
+package com.greemoid.giphy.presentation.di
 
 import com.greemoid.giphy.data.api.GifsApi
-import com.greemoid.giphy.data.repository.GifsMapper
-import com.greemoid.giphy.data.repository.TrendingGifsSource
+import com.greemoid.giphy.data.GifsMapper
+import com.greemoid.giphy.data.repository.GifsSource
 import com.greemoid.giphy.domain.repository.GifsRepository
-import com.greemoid.giphy.presentation.utils.BASE_URL
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +18,7 @@ val dataRemoteModule = module {
     single { GifsMapper() }
 
     single<GifsRepository> {
-        TrendingGifsSource(
+        GifsSource(
             gifsApi = get(),
             mapper = get()
         )
@@ -32,5 +31,7 @@ fun createRetrofit(): Retrofit {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }
+
+const val BASE_URL = "https://api.giphy.com/v1/gifs/"
 
 

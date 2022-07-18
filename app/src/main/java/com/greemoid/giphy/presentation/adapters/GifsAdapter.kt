@@ -6,13 +6,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.greemoid.giphy.R
 import com.greemoid.giphy.databinding.GifItemLayoutBinding
 import com.greemoid.giphy.domain.models.Giphy
 
 class GifsAdapter : RecyclerView.Adapter<GifsAdapter.GifsViewHolder>() {
-
-    var trendingGifs = emptyList<Giphy>()
 
     inner class GifsViewHolder(val binding: GifItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -20,8 +17,7 @@ class GifsAdapter : RecyclerView.Adapter<GifsAdapter.GifsViewHolder>() {
         fun displayGif(item: Giphy) {
             Glide.with(itemView.context)
                 .asGif()
-                .placeholder(R.drawable.img)
-                .load(item.url_medium)
+                .load(item.url_large)
                 .into(binding.imageViewGif)
         }
     }
@@ -32,7 +28,7 @@ class GifsAdapter : RecyclerView.Adapter<GifsAdapter.GifsViewHolder>() {
         }
 
         override fun areContentsTheSame(oldItem: Giphy, newItem: Giphy): Boolean {
-            return oldItem.url_medium == newItem.url_medium
+            return oldItem.url_large == newItem.url_large
         }
     }
 

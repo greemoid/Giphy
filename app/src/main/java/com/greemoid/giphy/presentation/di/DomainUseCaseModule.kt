@@ -1,4 +1,4 @@
-package com.greemoid.giphy.domain.di
+package com.greemoid.giphy.presentation.di
 
 import com.greemoid.giphy.domain.usecases.GetSearchGifsUseCase
 import com.greemoid.giphy.domain.usecases.GetTrendingGifsUseCase

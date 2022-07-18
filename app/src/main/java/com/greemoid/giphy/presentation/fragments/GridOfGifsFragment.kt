@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.greemoid.giphy.R
 import com.greemoid.giphy.databinding.FragmentGridOfGifsBinding
+import com.greemoid.giphy.presentation.GifsViewModel
 import com.greemoid.giphy.presentation.adapters.GifsAdapter
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope

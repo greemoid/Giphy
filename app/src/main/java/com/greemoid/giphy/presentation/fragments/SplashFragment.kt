@@ -14,6 +14,7 @@ import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.greemoid.giphy.R
 import com.greemoid.giphy.databinding.FragmentSplashBinding
+import com.greemoid.giphy.presentation.GifsViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -45,7 +46,7 @@ class SplashFragment : Fragment() {
 
         } else {
             binding.logo.textSize = 16f
-            binding.logo.text = "No internet connection"
+            binding.logo.text = getString(R.string.no_internet)
         }
     }
 

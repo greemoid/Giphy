@@ -4,8 +4,8 @@ import com.greemoid.giphy.domain.models.Giphy
 
 interface GifsRepository {
 
-    suspend fun fetchTrendingGifs(limit: Int = 200): List<Giphy>
+    suspend fun fetchTrendingGifs(): List<Giphy>
 
-    suspend fun fetchSearchGifs(limit: Int = 200, searchQuery: String): List<Giphy>
+    suspend fun fetchSearchGifs(searchQuery: String): List<Giphy>
 
 }

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/audiowide"
-        android:text="Giphy"
+        android:text="@string/giphy_logo"
         android:textColor="@color/black"
-        android:textSize="64sp" />
+        android:textSize="@dimen/font_64sp" />
 </FrameLayout>

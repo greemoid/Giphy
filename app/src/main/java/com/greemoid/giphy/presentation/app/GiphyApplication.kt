@@ -1,4 +1,4 @@
-package com.greemoid.giphy.presentation
+package com.greemoid.giphy.presentation.app
 
 import android.app.Application
 import com.greemoid.giphy.presentation.di.appComponent
