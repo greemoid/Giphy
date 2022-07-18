@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/gifFragment"
+        android:name="com.greemoid.giphy.presentation.fragments.GifFragment"
+        android:label="fragment_gif"
+        tools:layout="@layout/fragment_gif" >
+        <action
+            android:id="@+id/action_gifFragment_to_gridOfGifsFragment"
+            app:destination="@id/gridOfGifsFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="giphy"
+            app:argType="com.greemoid.giphy.domain.models.Giphy" />
+    </fragment>
+    <fragment
+        android:id="@+id/gridOfGifsFragment"
+        android:name="com.greemoid.giphy.presentation.fragments.GridOfGifsFragment"
+        android:label="GridOfGifsFragment" >
+        <action
+            android:id="@+id/action_gridOfGifsFragment_to_gifFragment"
+            app:destination="@id/gifFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.greemoid.giphy.presentation.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_gridOfGifsFragment"
+            app:destination="@id/gridOfGifsFragment" />
+    </fragment>
+</navigation>
