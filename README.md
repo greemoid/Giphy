@@ -16,7 +16,7 @@ The technology and instruments stack I used in developing the application
 - Jetpack Navigation
 - Android Architecture Components
 - Glide
-- Hilt
+- Koin
 - ViewBinding
 - Github
 - KanbanFlow
