@@ -10,8 +10,8 @@ import com.greemoid.giphy.domain.usecases.GetTrendingGifsUseCase
 import kotlinx.coroutines.launch
 
 class GifsViewModel(
-    val trendingGifsUseCase: GetTrendingGifsUseCase,
-    val searchGifsUseCase: GetSearchGifsUseCase,
+    private val trendingGifsUseCase: GetTrendingGifsUseCase,
+    private val searchGifsUseCase: GetSearchGifsUseCase,
 ) : ViewModel() {
 
     private val _trendingGifs: MutableLiveData<List<Giphy>> = MutableLiveData()
