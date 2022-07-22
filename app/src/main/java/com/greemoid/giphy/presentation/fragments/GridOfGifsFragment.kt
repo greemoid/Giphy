@@ -52,9 +52,9 @@ class GridOfGifsFragment : Fragment() {
             }
         }
 
-        viewModel.searchGifs.observe(viewLifecycleOwner, { list ->
+        viewModel.searchGifs.observe(viewLifecycleOwner) { list ->
             adapter.differ.submitList(list)
-        })
+        }
 
 
         adapter.setOnItemClickListener {
@@ -64,9 +64,9 @@ class GridOfGifsFragment : Fragment() {
         }
 
         viewModel.getTrendingGifs()
-        viewModel.trendingGifs.observe(viewLifecycleOwner, {list ->
+        viewModel.trendingGifs.observe(viewLifecycleOwner) { list ->
             adapter.differ.submitList(list)
-        })
+        }
     }
 
     private fun setupRecyclerView() {

@@ -14,7 +14,7 @@ import com.greemoid.giphy.databinding.FragmentGifBinding
 class GifFragment : Fragment() {
 
     private lateinit var binding: FragmentGifBinding
-    val args: GifFragmentArgs by navArgs()
+    private val args: GifFragmentArgs by navArgs()
 
 
     override fun onCreateView(

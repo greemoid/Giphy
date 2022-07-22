@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.greemoid.giphy"
-        minSdk 21
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -45,7 +45,7 @@ dependencies {
     def koin_version = '3.2.0'
     def coroutines_version = '1.6.2'
     def lifecycle_version = '2.5.0'
-    def glide_version = '4.13.0'
+    def glide_version = '4.13.2'
     def retrofit_version = '2.9.0'
 
     // Architectural Components

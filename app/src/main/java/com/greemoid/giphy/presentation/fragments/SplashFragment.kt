@@ -3,14 +3,12 @@ package com.greemoid.giphy.presentation.fragments
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.greemoid.giphy.R
 import com.greemoid.giphy.databinding.FragmentSplashBinding
@@ -23,18 +21,16 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class SplashFragment : Fragment() {
-    val viewModel: GifsViewModel by sharedViewModel()
+    private val viewModel: GifsViewModel by sharedViewModel()
     private lateinit var binding: FragmentSplashBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (isOnline(requireContext())) {
@@ -50,8 +46,7 @@ class SplashFragment : Fragment() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
-    fun isOnline(context: Context): Boolean {
+    private fun isOnline(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val capabilities =
